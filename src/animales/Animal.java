@@ -49,7 +49,11 @@ public abstract class Animal {
             this.peso = peso;
         }
     }
-
+    /**
+ * Devuelve el código identificativo del animal.
+ *
+ * @return código identificativo del animal
+ */
     public String getCodigo() {
         return codigo;
     }
@@ -61,7 +65,11 @@ public abstract class Animal {
             this.codigo = codigo;
         }
     }
-
+    /**
+ * Devuelve la fecha de nacimiento del animal.
+ *
+ * @return fecha de nacimiento en formato ISO-8601 (yyyy-MM-dd)
+ */
     public LocalDate getFechaNacimiento() {
         return fechaNacimiento;
     }
@@ -77,7 +85,11 @@ public abstract class Animal {
 
         this.fechaNacimiento = fecha;
     }
-
+    /**
+ * Devuelve el sexo del animal.
+ *
+ * @return 'M' si es hembra o 'H' si es macho
+ */
     public char getSexo() {
         return sexo;
     }
@@ -89,11 +101,20 @@ public abstract class Animal {
             this.sexo = sexo;
         }
     }
-
+/**
+ * Devuelve el peso actual del animal en kilogramos.
+ *
+ * @return peso del animal en kg
+ */
     public double getPeso() {
         return peso;
     }
-
+/**
+ * Modifica el peso del animal.
+ *
+ * @param peso nuevo peso en kilogramos, debe ser mayor que 0
+ * @throws IllegalArgumentException si el peso no es mayor que 0
+ */
     public void setPeso(double peso) {
         if (peso <= 0) {
             throw new IllegalArgumentException();
@@ -101,7 +122,11 @@ public abstract class Animal {
             this.peso = peso;
         }
     }
-
+/**
+ * Devuelve una representación en texto del animal con sus datos principales.
+ *
+ * @return cadena de texto con la información del animal
+ */
     @Override
     public int hashCode() {
         int hash = 3;
@@ -143,13 +168,27 @@ public abstract class Animal {
     public String toString() {
         return "Animal{" + "codigo=" + codigo + ", fechaNacimiento=" + fechaNacimiento + ", sexo=" + sexo + ", peso=" + peso + '}';
     }
-
+    /**
+    * Hace que el animal emita su sonido característico.
+    * Este método puede ser sobrescrito por las subclases.
+    */
     public abstract String hacerSonido();
 
+    /**
+ * Indica que el animal está contento y muestra su comportamiento alegre.
+ */
     public abstract String alegrarse();
 
+    /**
+ * Indica que el animal se enfada y muestra su comportamiento agresivo.
+ */
     public abstract String enfadarse();
 
+    /**
+ * Devuelve una cadena que indica qué tipo de animal es.
+ *
+ * @return texto descriptivo indicando el tipo de animal
+ */
     public abstract String queSoy();
 
 }
