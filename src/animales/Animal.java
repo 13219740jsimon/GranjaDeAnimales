@@ -27,7 +27,7 @@ public abstract class Animal {
      * @param peso peso del animal en kilogramos, debe ser mayor que 0
      *
      * @throws IllegalArgumentException si el código no cumple el patrón, el sexo es incorrecto,
-     * el peso no es positivo o la fecha no tiene un formato válido
+     * el peso no es positivo o la fecha no tiene un formato válido correspondiente
      */
     
     public Animal(String codigo, String fechaNacimiento, char sexo, double peso) {
